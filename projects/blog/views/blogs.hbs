@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Site</title>
+  <link rel="stylesheet" href="blogs.css" />
+</head>
+<body>
+  {{> navbar}}
+  <div class="container">
+    <h1>Blog Site</h1>
+    <form action="/blogs" method="post" class="blog-form">
+      <label>Title</label>
+      <input name="title" placeholder="Enter title" type="text" required /><br>
+
+      <label>Actor</label>
+      <select name="actor" id="">
+          {{#each actors as |actor|}}
+            <option value="{{actor._id}}">{{actor.name}}</option>
+            {{/each}}
+          </select>
+
+      <label>Description</label>
+      <textarea name="description" rows="4" placeholder="Write description" required></textarea>
+
+      <button type="submit">Add Blog</button>
+    </form>
+
+    <h2>All Blogs</h2>
+    <ul class="blog-list">
+      {{#each blogs as |blog|}}
+        <li>
+          <strong>Title:</strong> {{blog.title}} <br />
+          <strong>Actor:</strong> {{blog.actor.name}} <br />
+          
+
+          <strong>Description:</strong> {{blog.description}}
+          <button ><a href="/delete?id={{blog._id}}">Delete</a></button>
+          <button ><a href="/update?id={{blog._id}}">Update</a></button>
+          <button ><a href="/details?id={{blog._id}}">Details</a></button>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</body>
+</html>

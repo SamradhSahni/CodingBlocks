@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Actor Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  {{> navbar}}
+
+<h2>{{actor.name}}</h2>
+<img src="{{actor.image}}" alt="{{actor.name}}" style="width: 200px; height: auto;"><br>
+<p><strong>Age:</strong> {{actor.age}}</p>
+<a href="/actors">← Back</a>
+
+</body>
+</html>

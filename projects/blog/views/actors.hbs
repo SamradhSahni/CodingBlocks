@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Site</title>
+  <link rel="stylesheet" href="blogs.css" />
+</head>
+<body>
+  {{> navbar}}
+  <div class="container">
+    <h1>Actor Site</h1>
+    <form action="/actors" method="post" class="blog-form">
+      <label>Name:</label>
+      <input name="name" placeholder="Enter name" type="text" required /><br>
+
+      <label>ImageUrl:</label>
+      <input name="actorImageUrl" placeholder="Enter url" type="text" required /><br>
+
+      <label>Age:</label>
+      <input name="age" type="text" placeholder="Enter age">
+
+      <button type="submit">Add Actor</button>
+    </form>
+    <h2>All Actors</h2>
+    <ul class="blog-list">
+      {{#each actors as |actor|}}
+        <li>
+          <strong>actorImage:</strong> <img src="{{actor.actorImageUrl}}" alt="actor-image"> <br />
+          <strong>name:</strong> {{actor.name}} <br />
+          <strong>age:</strong> {{actor.age}}
+          <button ><a href="/delete/actor?id={{actor._id}}">Delete</a></button>
+          <button ><a href="/update/actor?id={{actor._id}}">Update</a></button>
+        </li>
+      {{/each}}
+    </ul>
+ 
+        
+  </div>
+</body>
+</html>
