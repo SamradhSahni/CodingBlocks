@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+  <form action="/login" method="POST">
+    <h1>Login to Your Account</h1>
+
+    {{#if msg}}
+      <div>
+        <p style="color: red;">{{msg}}</p>
+      </div>
+    {{/if}}
+
+    <input type="text" name="username" placeholder="Username" required />
+    <input type="password" name="password" placeholder="Password" required />
+    <button type="submit">Login</button>
+
+    <a class="google-btn" href="/login/google">
+      <img class="google-icon" src="https://icon2.cleanpng.com/20240216/ikb/transparent-google-logo-google-logo-with-multicolored-g-and-1710875587855.webp" alt="Google" />
+      Continue with Google
+    </a>
+
+    <div>
+      New User?
+      <a href="/signup" class="google-btn" style="margin-top: 12px;">Signup</a>
+    </div>
+  </form>
+</body>
+</html>
