@@ -1,0 +1,12 @@
+{{#each this.products as |product|}}
+    <img src="{{product.imgUrl}}" alt="img">
+    <a href="/shop/details?id={{product._id}}" target="_blank"></a>
+    <div>Name:{{product.name}} </div>
+    <div>Description:{{product.description}} </div>
+    </a>
+    <div>Price:{{product.price}} </div>
+    <button ><a href="/admin/edit?id={{product._id}}">edit</a></button>
+    <button ><a href="/admin/details?id={{product._id}}">details</a></button>
+    <button ><a href="/admin/delete?id={{product._id}}">delete</a></button>
+    
+{{/each}}

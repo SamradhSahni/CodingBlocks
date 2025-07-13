@@ -1,0 +1,25 @@
+<nav>
+  <img src="https://imgs.search.brave.com/r7-fLDvcIXYf5ixdKhq1kcBx3O5zKTtdUAWH5Ol9cFc/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93d3cu/bmljZXBuZy5jb20v/cG5nL2Z1bGwvMTE3/LTExNzQ3MjdfY29k/aW5nLWJsb2Nrcy1s/b2dvLnBuZw" alt="Logo">
+  
+  <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+    <a href="/profile">Home</a>
+    <a href="/shop/products">Products</a>
+    <a href="/shop/cart"><span>
+       Cart
+    {{#if this.cartCount}}
+    <div class="cartCount">{{this.cartCount}}</div>
+    {{else}}
+    <div class="cartCount"></div>
+    {{/if}}
+    </span></a>
+    {{!-- <a href="#">Profile</a> --}}
+    {{#if this.isAdmin}}
+    <a href="/admin/add-product">Add product</a>
+    <a href="/admin/products">Admin products</a>
+    {{/if}}
+  </div>
+
+  <div>
+    <input type="text" placeholder="Search" />
+  </div>
+</nav>
