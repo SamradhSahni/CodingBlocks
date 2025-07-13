@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    {{>navbar isAdmin=isAdmin cartCount=cartCount}}
+    <form action="/admin/add-product" method="post">
+    <label for="name">Name:</label>
+    <input type="text" placeholder="enter name" id="name" name="name">
+    <label for="price">Price:</label>
+    <input type="text" placeholder="enter price" id="price" name="price">
+    <label for="img">ImageUrl:</label>
+    <input type="text" placeholder="enter url" id="img" name="imgUrl">
+    <label for="description">Description:</label>
+    <textarea rows="10" id="description" cols="10" name="description">enter description</textarea>
+    <button type="submit">add product</button>
+    </form>
+</body>
+</html>
