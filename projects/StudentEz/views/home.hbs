@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="/home.css" />
+  <link rel="stylesheet" href="/navbar.css" />
+</head>
+<body>
+
+  {{> navbar}}
+
+  <div class="hero">
+    <h1>Welcome To StudentEz! 🎓</h1>
+    <p>Your journey to excellence starts today.</p>
+  </div>
+
+  <div class="container">
+    <div class="grid-container">
+      <div class="grid-item" onclick="toggleAttendance()">📊 Attendance</div>
+      <a href="/exams" class="grid-item">📝 Exams</a>
+      <a href="/budget" class="grid-item">💰 Budget</a>
+      <a href="/planner" class="grid-item">📅 Study Planner</a>
+      <a href="/workshops" class="grid-item">🎤 Workshops</a>
+    </div>
+
+    <div id="attendance-section" class="attendance-hidden">
+      <h2>📊 Attendance Panel</h2>
+
+      <form action="/subjects/add" method="POST" class="form-inline">
+        <input type="text" name="name" placeholder="Subject Name" required />
+        <button type="submit">Add Subject</button>
+      </form>
+
+      <form action="/home/set-goal" method="POST" class="form-inline">
+        <input type="number" name="goal" id="goal" value="{{goal}}" placeholder="Set Attendance Goal (%)" min="1" max="100" required />
+        <button type="submit">Set Goal</button>
+      </form>
+
+      <ul class="subject-list">
+        {{#each subjects}}
+          <li class="subject-item">
+            <strong>{{this.name}}</strong>
+            <div class="actions">
+              <a href="/attendance/mark/{{this._id}}">Mark</a>
+              <a href="/attendance/summary/{{this._id}}">Summary</a>
+              <a href="/attendance/edit/{{this._id}}">Edit</a>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="quote">
+      💡 <em>"Small steps every day lead to big results."</em>
+    </div>
+  </div>
+
+  <script>
+    function toggleAttendance() {
+      const section = document.getElementById("attendance-section");
+      section.classList.toggle("attendance-hidden");
+    }
+  </script>
+</body>
+</html>
