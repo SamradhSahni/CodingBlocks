@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f3f7fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: 80px auto;
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.heading {
+  font-size: 2rem;
+  color: #1d3557;
+  margin-bottom: 30px;
+}
+
+.mark-form {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.present-btn,
+.absent-btn {
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.present-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.present-btn:hover {
+  background-color: #218838;
+}
+
+.absent-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.absent-btn:hover {
+  background-color: #c82333;
+}
