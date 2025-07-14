@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop Enrollments</title>
+  <link rel="stylesheet" href="/enrollments.css" />
+  <link rel="stylesheet" href="/navbar.css" />
+</head>
+<body>
+  {{> navbar}}
+
+  <div class="container">
+    <h2 class="heading">📋 Workshop Enrollments</h2>
+
+    {{#each workshops}}
+      <div class="workshop-block">
+        <h3>{{this.title}}</h3>
+        {{#if this.enrolledUsers.length}}
+          <ul>
+            {{#each this.enrolledUsers}}
+              <li>
+                {{#if this.username}}
+                  {{this.username}}
+                {{else if this.email}}
+                  {{this.email}}
+                {{else}}
+                  Unknown User
+                {{/if}}
+              </li>
+            {{/each}}
+          </ul>
+        {{else}}
+          <p class="no-enroll">No enrollments yet</p>
+        {{/if}}
+      </div>
+    {{/each}}
+  </div>
+</body>
+</html>

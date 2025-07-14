@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{workshop.title}}</title>
+  <link rel="stylesheet" href="/workshopDetails.css" />
+  <link rel="stylesheet" href="/navbar.css" />
+</head>
+
+<body>
+  {{> navbar}}
+
+  <div class="container">
+    <h2 class="title">{{workshop.title}}</h2>
+    {{#if workshop.imageUrl}}
+    <img src="{{workshop.imageUrl}}" alt="{{workshop.title}}" class="workshop-detail-image">
+    {{/if}}
+    <p><strong>Instructor:</strong> {{workshop.instructor}}</p>
+    <p><strong>Date:</strong> {{workshop.date}} | <strong>Time:</strong> {{workshop.time}}</p>
+    <p><strong>Description:</strong> {{workshop.description}}</p>
+    <p><strong>Location/Link:</strong> <a href="{{workshop.location}}" target="_blank">{{workshop.location}}</a></p>
+
+    {{#if isEnrolled}}
+    <p class="enrolled-status">✅ You are enrolled</p>
+    {{else}}
+    <form method="POST" action="/workshops/enroll/{{workshop._id}}" class="enroll-form">
+      <button type="submit">Enroll</button>
+    </form>
+    {{/if}}
+
+    <a href="/workshops" class="back-link">← Back to all workshops</a>
+  </div>
+</body>
+
+</html>

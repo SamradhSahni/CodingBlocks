@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Workshop</title>
+  <link rel="stylesheet" href="/createWorkshop.css" />
+  <link rel="stylesheet" href="/navbar.css" />
+</head>
+<body>
+  {{> navbar}}
+
+  <div class="container">
+  <h2 class="heading">Create New Workshop</h2>
+  <form class="workshop-form" method="POST" action="/workshops/admin/create">
+    <label>Title:</label>
+    <input type="text" name="title" required />
+
+    <label>Instructor:</label>
+    <input type="text" name="instructor" required />
+
+    <label>Date:</label>
+    <input type="date" name="date" required />
+
+    <label>Time:</label>
+    <input type="time" name="time" required />
+
+    <label>Description:</label>
+    <textarea name="description" required></textarea>
+
+    <label>Location / Meeting Link:</label>
+    <input type="text" name="location" required />
+
+    <label>Image URL:</label>
+    <input type="url" name="imageUrl" placeholder="Image Url" />
+
+    <button type="submit">Create Workshop</button>
+  </form>
+</div>
+
+</body>
+</html>
