@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f7fa;
+  color: #333;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #1d3557;
+  margin-bottom: 30px;
+}
+
+.workshop-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.workshop-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.workshop-card:hover {
+  transform: translateY(-4px);
+}
+
+.workshop-card h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.details-btn {
+  display: inline-block;
+  margin-top: 12px;
+  background-color: #1d3557;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.details-btn:hover {
+  background-color: #457b9d;
+}
+
+.empty {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+}
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+.workshop-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
