@@ -6,11 +6,13 @@
 
     <div class="nav-links">
       <a href="/home">🏠 Home</a>
-      <a href="/attendance">📊 Attendance</a>
-      <a href="/exams">📝 Exams</a>
-      <a href="/budget">💰 Budget</a>
-      <a href="/planner">📅 Study Planner</a>
-      <a href="/about">ℹ️ About</a>
+      <a href="/workshops">📚 All Workshops</a>
+      <a href="/workshops/my-enrollments">✅ My Enrollments</a>
+
+      {{#if user.isAdmin}}
+        <a href="/workshops/admin/create">➕ Create Workshop</a>
+        <a href="/workshops/admin/enrollments">👥 View Enrollments</a>
+      {{/if}}
     </div>
 
     <div class="nav-actions">
