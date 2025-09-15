@@ -3,48 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us</title>
-  <link rel="stylesheet" href="/about.css" />
+  <title>About Us - StudentEz</title>
   <link rel="stylesheet" href="/navbar.css" />
+  <link rel="stylesheet" href="/about.css" />
 </head>
 <body>
   {{> navbar}}
 
   <div class="about-container">
-    <h1 class="heading">🎓 About Us</h1>
-
+    <h1 class="main-heading">👋 About StudentEz — Your College Companion</h1>
     <p class="intro">
-      Welcome to <strong>Student Dashboard</strong> — a one-stop productivity and academic management platform built for college students. Our goal is to simplify your academic life with all essential tools in one place.
+      Welcome to <strong>StudentEz</strong> — a smart, all-in-one student dashboard built to simplify your academic and career journey.
+      College life is busy, and we’re here to make it easier.
     </p>
 
-    <div class="feature-blocks">
-      <div class="feature">
-        <h2>📊 Attendance Tracker</h2>
-        <p>Track your classes, set attendance goals, and stay informed on how many classes you can miss or need to attend.</p>
-      </div>
-
-      <div class="feature">
-        <h2>📝 Exams</h2>
-        <p>Plan your upcoming exams, add important questions, tips, and resources to prepare smarter.</p>
-      </div>
-
-      <div class="feature">
-        <h2>💰 Budget Tracker</h2>
-        <p>Manage your monthly spending, log daily expenses, and maintain financial awareness as a student.</p>
-      </div>
-
-      <div class="feature">
-        <h2>📅 Study Planner</h2>
-        <p>Create daily or future tasks, and mark them complete when you're done. Perfect for organizing your studies.</p>
-      </div>
-
-      <div class="feature">
-        <h2>🎤 Workshops</h2>
-        <p>Explore and enroll in workshops created by admins — enhance your skills and stay updated with events.</p>
-      </div>
+    <div class="feature-card">
+      <h2>💼 Job Portal</h2>
+      <p>Apply to internships and jobs with ease. Our job portal lets you:</p>
+      <ul>
+        <li>🔎 Discover job listings posted by admins</li>
+        <li>📤 Apply with your resume</li>
+        <li>📊 Track your application status (Pending, Accepted, Declined)</li>
+        <li>📝 Receive notes or feedback from recruiters</li>
+        <li>❌ Delete your applications if needed</li>
+      </ul>
     </div>
 
-    
+    <div class="feature-card">
+      <h2>🎓 Workshop Portal</h2>
+      <p>Explore hands-on learning opportunities beyond the classroom:</p>
+      <ul>
+        <li>📅 Browse all upcoming workshops with images and details</li>
+        <li>🧠 Learn new skills and boost your profile</li>
+        <li>✅ Enroll in a click, view your enrollments, or unenroll anytime</li>
+        <li>📈 Admins can manage and view participants seamlessly</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <h2>📄 Resume Screener</h2>
+      <p>Before your resume reaches recruiters, make it ATS-friendly:</p>
+      <ul>
+        <li>🎯 Score out of 100 based on real ATS standards</li>
+        <li>📌 Keyword matching, action verbs, formatting & length feedback</li>
+        <li>🛠 Suggestions to improve sections and boost your chances</li>
+        <li>📃 Metrics like page count and word count included</li>
+      </ul>
+    </div>
+
+    <hr/>
+
+    <h2 class="section-heading">📚 Academic & Personal Trackers</h2>
+
+    <div class="grid-trackers">
+      <div class="tracker-card">
+        <h3>📊 Attendance Tracker</h3>
+        <p>Set your attendance goal, mark daily presence, and see how many classes you can miss or must attend.</p>
+      </div>
+
+      <div class="tracker-card">
+        <h3>📝 Exam Planner</h3>
+        <p>Add upcoming exams, include links, tips, and questions. Stay organized and revision-ready.</p>
+      </div>
+
+      <div class="tracker-card">
+        <h3>💰 Budget Tracker</h3>
+        <p>Set your monthly budget, log expenses by category, and view suggestions based on your savings or spending.</p>
+      </div>
+
+      <div class="tracker-card">
+        <h3>📅 Study Planner</h3>
+        <p>Create date-wise study tasks, mark them complete, and filter by day to stay focused and productive.</p>
+      </div>
+    </div>
   </div>
 </body>
 </html>
