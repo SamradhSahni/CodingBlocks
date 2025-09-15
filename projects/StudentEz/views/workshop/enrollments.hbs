@@ -3,23 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Workshop Enrollments</title>
-  <link rel="stylesheet" href="/enrollments.css" />
+  <title>Workshop Enrollments | StudentEz</title>
   <link rel="stylesheet" href="/navbar.css" />
+  <link rel="stylesheet" href="/enrollments.css" />
 </head>
 <body>
-  {{> navbar}}
+  {{> workshopNavbar}}
 
   <div class="container">
-    <h2 class="heading">📋 Workshop Enrollments</h2>
+    <h2 class="page-title">📋 Workshop Enrollments</h2>
+    <p class="subtitle">Check out which students have enrolled for each of your workshops. Stay organized and informed.</p>
 
     {{#each workshops}}
-      <div class="workshop-block">
-        <h3>{{this.title}}</h3>
+      <div class="workshop-card">
+        <h3 class="workshop-title">{{this.title}}</h3>
+        
         {{#if this.enrolledUsers.length}}
-          <ul>
+          <ul class="enrolled-list">
             {{#each this.enrolledUsers}}
-              <li>
+              <li class="enrolled-item">
+                <span class="user-icon">👤</span>
                 {{#if this.username}}
                   {{this.username}}
                 {{else if this.email}}
@@ -31,7 +34,7 @@
             {{/each}}
           </ul>
         {{else}}
-          <p class="no-enroll">No enrollments yet</p>
+          <p class="no-enroll">⚠️ No enrollments yet</p>
         {{/if}}
       </div>
     {{/each}}

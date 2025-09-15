@@ -3,40 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Create Workshop</title>
-  <link rel="stylesheet" href="/createWorkshop.css" />
+  <title>Create Workshop | StudentEz</title>
   <link rel="stylesheet" href="/navbar.css" />
+  <link rel="stylesheet" href="/createWorkshop.css" />
 </head>
 <body>
-  {{> navbar}}
+  {{> workshopNavbar}}
 
-  <div class="container">
-  <h2 class="heading">Create New Workshop</h2>
-  <form class="workshop-form" method="POST" action="/workshops/admin/create">
-    <label>Title:</label>
-    <input type="text" name="title" required />
+  <section class="form-section">
+    <div class="form-container">
+      <h2 class="form-title">🚀 Create New Workshop</h2>
+      <p class="form-subtext">Provide the details below to launch a new student workshop.</p>
 
-    <label>Instructor:</label>
-    <input type="text" name="instructor" required />
+      <form class="workshop-form" method="POST" action="/workshops/admin/create">
+        <label for="title">Workshop Title:</label>
+        <input type="text" id="title" name="title" required placeholder="e.g. Web Dev Bootcamp" />
 
-    <label>Date:</label>
-    <input type="date" name="date" required />
+        <label for="instructor">Instructor Name:</label>
+        <input type="text" id="instructor" name="instructor" required placeholder="e.g. John Doe" />
 
-    <label>Time:</label>
-    <input type="time" name="time" required />
+        <div class="form-row">
+          <div>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required />
+          </div>
+          <div>
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required />
+          </div>
+        </div>
 
-    <label>Description:</label>
-    <textarea name="description" required></textarea>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required placeholder="Brief overview of the workshop..."></textarea>
 
-    <label>Location / Meeting Link:</label>
-    <input type="text" name="location" required />
+        <label for="location">Location / Meeting Link:</label>
+        <input type="text" id="location" name="location" required placeholder="e.g. Zoom link or Room no." />
 
-    <label>Image URL:</label>
-    <input type="url" name="imageUrl" placeholder="Image Url" />
+        <label for="imageUrl">Workshop Banner (Image URL):</label>
+        <input type="url" id="imageUrl" name="imageUrl" placeholder="https://example.com/banner.jpg" />
 
-    <button type="submit">Create Workshop</button>
-  </form>
-</div>
-
+        <button type="submit"> Create Workshop</button>
+      </form>
+    </div>
+  </section>
 </body>
 </html>
